@@ -77,12 +77,10 @@ console.log('this.state.events...', this.state.events);
         <CreateEvent
         CreateEvent={this.eventCreated.bind(this)}
         />
-
-        <div className="users_events">
           <EventList
             events={this.state.events}
           />
-        </div>
+
         <Footer />
       </div>
     );
