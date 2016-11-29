@@ -36,6 +36,11 @@ h1 {
   margin-bottom:20px;
 }
 
+
 .ProfilePage{
   text-align: center;
+
+.event_item button {
+  position: relative;
+
 }

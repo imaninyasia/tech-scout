@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EventList from '../components/EventList/EventList.jsx';
-import "./DashboardPage.css";
+import './DashboardPage.css';
 import Nav from "../components/Nav/Nav.jsx";
 import About from '../components/About/About.jsx';
 import EventForm from '../components/EventForm/EventForm.jsx';
@@ -24,7 +24,6 @@ export default class DashboardPage extends Component {
     AjaxAdapter.getAllEvents()
       .then((allEvents) => {
         this.setState({ events: allEvents });
-console.log('this.state.events...', this.state.events);
       }
     )
     .catch((error) => {
@@ -32,38 +31,25 @@ console.log('this.state.events...', this.state.events);
     });
   }
 
-  addEvent(title, desc, url) {
-// console.log('title....', title);
-    fetch('./events', {
-      method: 'POST',
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      },
-      body: JSON.stringify({title, desc, url})
-// console.log('body....', body);
+  addEvent(name, desc, img_url) {
+    AjaxAdapter.addEvent({ name, desc, img_url })
+    .then((newEvent) => {
+      // clone existing state
+      const newState = { ...this.state.events };
+      newState[newEvent.id] = newEvent;
+      this.setState({ events: newState });
     })
-      .then((r) => {
-        console.log('response (r) is: ', r);
-        r.json();
-      })
-      .then((newEvent) => {
-// console.log('newEvent....', newEvent);
-        // clone existing state
-        const newState = {...this.state.events};
-        newState[newEvent.id] = newEvent;
-        this.setState({events: newState});
-        next();
-      })
-      .catch((error) => {
-        throw error;
-      });
+    .catch((error) => {
+      throw error;
+    });
   }
-    eventCreated(){
-      //button that opens modal
-      const button = document.getElementsByClassName('created');
-      const wrapper = document.getElementsByClassName('eventFormWrapper')[0].style.display="block";
-      const close = document.getElementsByClassName("close");
-  }
+  //
+  //   eventCreated(){
+  //     //button that opens modal
+  //     const button = document.getElementsByClassName('created');
+  //     const wrapper = document.getElementsByClassName('eventFormWrapper')[0].style.display="block";
+  //     const close = document.getElementsByClassName("close");
+  // }
 
   render() {
     return (
@@ -73,13 +59,14 @@ console.log('this.state.events...', this.state.events);
         <div id="a">
           <a id="signout" href="#">Sign Out</a>
         </div>
-        <CreateEvent
-        CreateEvent={this.eventCreated.bind(this)}
-        />
-          <EventList
-            events={this.state.events}
-          />
 
+
+        <EventForm
+          addEvent={this.addEvent.bind(this)}
+        />
+        <EventList
+          events={this.state.events}
+        />
         <Footer />
       </div>
     );
