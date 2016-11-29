@@ -10,10 +10,7 @@ export default class ProfilePage extends Component {
     super();
 
     this.state = {
-      currentUser: this.props.user,
       events: {},
-      following: {},
-      followers: {},
     };
 
     this.addEvent = this.addEvent.bind(this);
@@ -21,7 +18,7 @@ export default class ProfilePage extends Component {
 
   // executed once the ProfilePage component mounts
   componentDidMount() {
-    AjaxAdapter.getEventsForUser()
+    AjaxAdapter.getAllEvents()
       .then((allEvents) => {
         this.setState({ events: allEvents });
 // console.log('this.state.events...', this.state.events);
@@ -30,9 +27,8 @@ export default class ProfilePage extends Component {
     .catch((error) => {
         throw error;
     });
-
   }
-  // beep bap boop
+
   // need to change add Event function to use AjaxAdapter.addEvent after creating that as function as well
   addEvent(title, desc, url) {
 // console.log('title....', title);
