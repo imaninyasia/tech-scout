@@ -3,7 +3,13 @@ h1 {
 }
 
 #a {
-  text-align: center;
+  text-align: right;
+  margin-right: 30px;
+
+
+}
+#a a{
+  color: black;
 }
 
 .eventFormWrapper {

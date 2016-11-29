@@ -1,18 +1,35 @@
+*{
+  margin:0px;
+  padding: 0px;
+}
 #search{
   height: 25px;
   margin-bottom: 10px;
 }
-h4 {
-  color: #260d0d;
-  margin-bottom: -15px;
+.searchbar{
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+  clear: both;
+
 }
+h4 {
+  text-align: center;
+  color: #260d0d;
+  margin-bottom:5px;
+  height: 15px;
+  display: block;
+  width: 100%;
+}
+
 #search_button{
   display: inline-block;
-  margin-top: 8px;
-  width: 50px;
-  padding: 20px;
+  margin-top: 15px;
+  width: 80px;
+  height: 30px;
+  padding: 5px;
 }
-.searchbar{
-  margin-top: 10px;
-  text-align: center;
-}
+

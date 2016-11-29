@@ -1,6 +1,6 @@
 .signup_form{
   background-color: #ADB6B5;
-  height: 60vh;
+  height: 45vh;
   width: 30vw;
 
 }
@@ -10,8 +10,8 @@ input {
   height: 40px;
 }
 #submit{
-  padding: 30px;
-  font-size: 60px;
+  padding: 10px;
+  font-size: 20px;
 }
 #submit:hover{
   cursor: pointer;

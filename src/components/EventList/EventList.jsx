@@ -15,9 +15,11 @@ const generateEvents = events =>
     ));
 
 const EventList = props => (
+  <div className="flex_event">
   <div className="event_list">
-    <h1>showing list of events</h1>
+    <h1>List of events</h1>
     {generateEvents(props.events)}
+  </div>
   </div>
 );
 

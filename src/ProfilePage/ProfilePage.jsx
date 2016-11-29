@@ -67,8 +67,9 @@ export default class ProfilePage extends Component {
 
         <div className="friendList"> friends list
         </div>
+
          <EventList
-            events={this.state.events}
+          events={this.state.events}
           />
 
 

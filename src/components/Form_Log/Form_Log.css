@@ -1,6 +1,6 @@
 .login_form{
   background-color: #ADB6B5;
-  height: 60vh;
+  height: 40vh;
   width: 30vw;
 }
 
@@ -10,8 +10,8 @@
   height: 45px;
 }
 #submit{
-  padding: 30px;
-  font-size: 60px;
+  padding: 10px;
+  font-size: 20px;
 }
 #submit:hover{
   cursor: pointer;

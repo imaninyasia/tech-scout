@@ -71,9 +71,8 @@ console.log('this.state.events...', this.state.events);
 
       <Nav/>
         <div id="a">
-          <a href="#">Sign Out</a>
+          <a id="signout" href="#">Sign Out</a>
         </div>
-        <Search />
         <CreateEvent
         CreateEvent={this.eventCreated.bind(this)}
         />

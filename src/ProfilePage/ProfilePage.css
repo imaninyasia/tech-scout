@@ -4,6 +4,10 @@
   flex-wrap: wrap;
   justify-content: center;
   }
+
+  .flex_event{
+  width: 200px;
+  }
 #bottomPage{
   text-align: center;
   align-content: center;
@@ -54,7 +58,7 @@ img {
 
 }
 .friendList{
-
+  margin-right: 222px;
   margin-top: 10px;
   height: 50vh;
   width: 425px;
